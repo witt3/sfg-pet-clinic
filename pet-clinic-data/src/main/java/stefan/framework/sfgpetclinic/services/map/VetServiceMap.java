@@ -2,10 +2,11 @@ package stefan.framework.sfgpetclinic.services.map;
 
 import stefan.framework.sfgpetclinic.model.Vet;
 import stefan.framework.sfgpetclinic.services.CrudService;
+import stefan.framework.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
     public Set<Vet> findAll() {
