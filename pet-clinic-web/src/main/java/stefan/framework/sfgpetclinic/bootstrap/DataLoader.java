@@ -1,13 +1,12 @@
 package stefan.framework.sfgpetclinic.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import stefan.framework.sfgpetclinic.model.Owner;
 import stefan.framework.sfgpetclinic.model.Vet;
 import stefan.framework.sfgpetclinic.services.OwnerService;
 import stefan.framework.sfgpetclinic.services.VetService;
-import stefan.framework.sfgpetclinic.services.map.OwnerServiceMap;
-import stefan.framework.sfgpetclinic.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -15,10 +14,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
